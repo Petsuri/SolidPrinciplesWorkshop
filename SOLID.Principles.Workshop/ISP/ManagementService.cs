@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ISP
 {
@@ -35,13 +36,7 @@ namespace ISP
                 dates.Add(dt);
             }
 
-            var revenue = new Dictionary<DateTime, decimal>();
-            foreach (var date in dates)
-            {
-                revenue.Add(date, _reservation.CalculateRevenue(date));
-            }
-
-            return revenue;
+            return dates.ToDictionary(date => date, date => _reservation.CalculateRevenue(date));
         }
 
     }

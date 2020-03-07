@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ISP
+﻿namespace ISP
 {
-    class ReservationCode
+    public sealed class ReservationCode
     {
+        public string Value { get; }
+
+        internal ReservationCode(string value)
+        {
+            Value = value;
+        }
     }
 }

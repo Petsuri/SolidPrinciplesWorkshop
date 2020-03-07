@@ -15,12 +15,16 @@ namespace ISP
 
         public IReadOnlyDictionary<DateTime, IReadOnlyList<int>> FindAvailableDates()
         {
-            var dates = _reservation.FindAvailableDates();
-            return dates.Select(x =>
-            {
-                var tables = _reservation.GetListOfAvailableTables(x);
-                return new KeyValuePair<DateTime, IReadOnlyList<int>>(x, tables);
-            }).ToDictionary(pair => pair.Key, pair => pair.Value);
+            return _reservation
+                .FindAvailableDates()
+                .Select(TablesForDate)
+                .ToDictionary(pair => pair.Key, pair => pair.Value);
+        }
+
+        private KeyValuePair<DateTime, IReadOnlyList<int>> TablesForDate(DateTime x)
+        {
+            var tables = _reservation.GetListOfAvailableTables(x);
+            return new KeyValuePair<DateTime, IReadOnlyList<int>>(x, tables);
         }
 
         public string ReserveTable(DateTime date, int tableId)
