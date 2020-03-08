@@ -1,16 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
-namespace SRP
+namespace OCP.ExternalModule
 {
-    public sealed class Database
+    public sealed class AdoNetConnection: IConnection
     {
         public Task<T> Query<T>(string sql, object parameters)
         {
             return Task.FromResult(default(T));
         }
 
-        public Task Execute(string SQL, object parameters)
+        public Task Execute(string sql, object parameters)
         {
             return Task.CompletedTask;
         }
