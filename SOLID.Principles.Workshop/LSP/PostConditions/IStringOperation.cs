@@ -1,4 +1,4 @@
-﻿namespace LSP.PreConditions
+﻿namespace LSP.PostConditions
 {
     public interface IStringOperation
     {
