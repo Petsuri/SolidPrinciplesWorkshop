@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LSP", "LSP\LSP.csproj", "{D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCP", "OCP\OCP.csproj", "{4063C2A5-1BEF-4180-B525-B51D6A625290}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LSP.UnitTests", "LSP.UnitTests\LSP.UnitTests.csproj", "{54EC3F41-0425-4CE0-9312-A0FEA0E7F928}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4063C2A5-1BEF-4180-B525-B51D6A625290}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4063C2A5-1BEF-4180-B525-B51D6A625290}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4063C2A5-1BEF-4180-B525-B51D6A625290}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54EC3F41-0425-4CE0-9312-A0FEA0E7F928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54EC3F41-0425-4CE0-9312-A0FEA0E7F928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54EC3F41-0425-4CE0-9312-A0FEA0E7F928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54EC3F41-0425-4CE0-9312-A0FEA0E7F928}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
