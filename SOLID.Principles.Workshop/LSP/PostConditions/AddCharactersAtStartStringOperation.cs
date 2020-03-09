@@ -19,12 +19,12 @@ namespace LSP.PostConditions
             }
 
             var modified = _characters + s;
-            if (modified.Length <= 1000)
+            if (modified.Length <= 1100)
             {
                 return modified;
             }
 
-            return modified.Substring(0, 1000);
+            throw new InvalidOperationException("Modified string can't be over 1100 characters long");
 
         }
     }

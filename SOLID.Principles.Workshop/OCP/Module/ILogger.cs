@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace OCP.Class
+namespace OCP.Module
 {
     public interface ILogger
     {
