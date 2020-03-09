@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace SRP
@@ -74,8 +75,14 @@ namespace SRP
                     Price = pizzaPrice
                 });
 
-            var email = new EmailSender();
-            await email.Send(ordererEmail, "Your order has been received");
+
+            var request = new HttpRequestMessage(HttpMethod.Post, "https://api.sendgrid.com/v3/mail/send");
+            request.Headers.Add("Authorization", "Bearer Aeofkewpofkwaop53251095121==");
+            request.Headers.Add("Content-Type", "application/json");
+            request.Content = new StringContent(@"{""personalizations"": [{""to"": [{""email"": """ + ordererEmail + @"""}]}],""subject"": ""Pizza order"",""content"": [{""type"": ""text/plain"", ""value"": ""Your pizza is on the way""}]}");
+            var httpClient = new HttpClient();
+            await httpClient.SendAsync(request);
+
         }
 
     }
