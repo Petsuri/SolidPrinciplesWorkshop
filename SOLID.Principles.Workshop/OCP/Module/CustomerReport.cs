@@ -8,7 +8,7 @@ namespace OCP.Module
         public static void Main()
         {
             var connection = new AdoNetConnection();
-            var db = new LoggingDatabase(new Database(connection), null, null);
+            var db = new Database(connection);
 
             var numberOfCustomers =
                 db.Query<int>("SELECT COUNT(ID) FROM Customers WHERE RegisteredTimestamp BETWEEN @Start AND @End",
