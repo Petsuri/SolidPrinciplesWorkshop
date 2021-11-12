@@ -4,16 +4,11 @@ namespace OCP.Method
 {
     public class TestingPetrisPizzeriaMembership : PetrisPizzeriaMembership
     {
-        private DateTime _currentTime = new DateTime(2000, 1, 1);
+        private readonly DateTime _currentTime = new DateTime(2000, 1, 1);
 
-        public TestingPetrisPizzeriaMembership(Guid id, DateTime? expireTime) : base(id, expireTime)
+        public TestingPetrisPizzeriaMembership(Guid id, DateTime? expireTime, DateTime? currentTime = null) : base(id, expireTime)
         {
-        }
-
-        public TestingPetrisPizzeriaMembership WithCurrentTime(DateTime currentTime)
-        {
-            _currentTime = currentTime;
-            return this;
+            _currentTime = currentTime ?? _currentTime;
         }
 
         protected override DateTime CurrentTime()
