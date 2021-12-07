@@ -1,4 +1,4 @@
-﻿namespace DIP
+﻿namespace DIP.Infrastructure
 {
     public sealed class HttpSession
     {

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace DIP
+namespace DIP.Infrastructure
 {
     public sealed class Database
     {
